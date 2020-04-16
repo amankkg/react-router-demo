@@ -5,7 +5,9 @@ import {
   Home,
   About,
   Contacts,
-  NotFound
+  NotFound,
+  Users,
+  User
 } from './pages'
 
 export const App = () => {
@@ -13,6 +15,8 @@ export const App = () => {
     <BrowserRouter>
       <header>
         <Link to="/">Home</Link>
+        &nbsp;
+        <Link to="/users">Users</Link>
         &nbsp;
         <Link to="/about">About</Link>
         &nbsp;
@@ -23,6 +27,12 @@ export const App = () => {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/users">
+            <Users />
+          </Route>
+          <Route path="/users/:userId">
+            <User />
           </Route>
           <Route path="/about">
             <About />
